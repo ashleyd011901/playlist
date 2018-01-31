@@ -17,10 +17,12 @@
 
 // Songs
 var mySong = {
-	"title":"24K Magic",
-	"artist":"Bruno Mars",
-	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-	"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
+	"title":"How Did I Get Here",
+	"artist":"ODESZA",
+	"mp3-url":"https://open.spotify.com/track/5MioM7cyUToVQN7zcIMVxi",
+	"image-url":"https://i.scdn.co/image/26c51ac179c1c8a7682747dcc9c1ab81361dfe2f",
+	"duration":"2:11",
+	"genre":"pop",
 }
 
 var myPlayList = [
@@ -49,7 +51,11 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-  
+	$('body').append("<p>Song title: " + mySong.title + "</p>");
+	$('body').append("<p>Artist: " + mySong.artist + "</p>");
+	$('body').append("<img src =" + mySong['image-url'] + ">");
+	$('body').append("<a href ='" + mySong['mp3-url'] + "'> Play Song </a>");
+	
 
 
 
