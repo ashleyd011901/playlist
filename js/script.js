@@ -48,36 +48,37 @@ var myPlayList = [
 	}
 
 ]
-//DOCUMENT READY FUNCTION
-// $( document ).ready(function() {
-// 	$('body').append("<p>Song title: " + mySong.title + "</p>");
-// 	$('body').append("<p>Artist: " + mySong.artist + "</p>");
-// 	$('body').append("<img src =" + mySong['image-url'] + ">");
-// 	$('body').append("<a href ='" + mySong['mp3-url'] + "'> Play Song </a>");
 
-
-  
-// function displayList
 $(document).ready(function(){
 	console.log("ready")
-	for(var i = 0; i < myPlayList.length; i++){
-		$("body").append("<p> Title:" + myPlayList[i].title + "</p>");
-    	$("body").append("<p> Artist:" + myPlayList[i].artist + "</p>");
-		$("body").append("<a href ='" + myPlayList[i]["mp3-url"] + "'> Play Song </a>");
-		$("body").append("<img src =" + myPlayList[i]["image-url"] + ">");
-	
-	}
+	renderPlayList();
+	$("#addSong").click(addSong);
 });
 
+function renderPlayList() {
+	$(".songs").html("");
+	for(var i = 0; i < myPlayList.length; i++) {
+		$(".songs").append("<div class='song' id='song-" + i + "'><div class='remove'>X</div></div>");
+		$("#song-" + i).append("<p> Title:" + myPlayList[i].title + "</p>");
+    	$("#song-" + i).append("<p> Artist:" + myPlayList[i].artist + "</p>");
+		$("#song-" + i).append("<a href ='" + myPlayList[i]["mp3-url"] + "'> Play Song </a>");
+		$("#song-" + i).append("<img src =" + myPlayList[i]["image-url"] + ">");
+	}
 
-function clearList(){
-  
-  
-  
+	$(".remove").click(removeSong);
+}
+
+function removeSong(event){
+	console.log('X Clicked')
+  $(event.target).parent().hide();
 }
 
 function addSong(){
- 
-  
-  
+	myPlayList.push({
+		"title": $("#title").val(),
+		"artist": $("#artist").val(),
+		"mp3-url": $("#mp3Url").val(),
+		"image-url": $("#imageUrl").val()
+	});
+	renderPlayList();
 }
