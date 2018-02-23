@@ -1,5 +1,6 @@
 // quick fix for Cloud9 warning:
 /* global $ */
+/* global url */
 
 // Class 2:
 // Complete displayList() to show a single song in the list
@@ -47,35 +48,27 @@ var myPlayList = [
 	}
 
 ]
-
-
-
-// DOCUMENT READY FUNCTION
-$( document ).ready(function() {
-	$('body').append("<p>Song title: " + mySong.title + "</p>");
-	$('body').append("<p>Artist: " + mySong.artist + "</p>");
-	$('body').append("<img src =" + mySong['image-url'] + ">");
-	$('body').append("<a href ='" + mySong['mp3-url'] + "'> Play Song </a>");
-	
-
-
-
-
-
-		for(var i = 0; i < myPlayList.length; i++){
-			
-			$("body").append("<p> Title:" + myPlayList[i].title + "</p>");
-    		$("body").append("<p> Artist:" + myPlayList[i].artist + "</p>");
-			$("body").append("<a href ='" + myPlayList[i].mp3-url + "'> Play Song </a>");
-			$("body").append("<img src =" + myPlayList[i].image-url + ">");
-	
-});
-
-function displayList(){
+//DOCUMENT READY FUNCTION
+// $( document ).ready(function() {
+// 	$('body').append("<p>Song title: " + mySong.title + "</p>");
+// 	$('body').append("<p>Artist: " + mySong.artist + "</p>");
+// 	$('body').append("<img src =" + mySong['image-url'] + ">");
+// 	$('body').append("<a href ='" + mySong['mp3-url'] + "'> Play Song </a>");
 
 
   
-}
+// function displayList
+$(document).ready(function(){
+	console.log("ready")
+	for(var i = 0; i < myPlayList.length; i++){
+		$("body").append("<p> Title:" + myPlayList[i].title + "</p>");
+    	$("body").append("<p> Artist:" + myPlayList[i].artist + "</p>");
+		$("body").append("<a href ='" + myPlayList[i]["mp3-url"] + "'> Play Song </a>");
+		$("body").append("<img src =" + myPlayList[i]["image-url"] + ">");
+	
+	}
+});
+
 
 function clearList(){
   
