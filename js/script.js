@@ -58,6 +58,7 @@ $(document).ready(function(){
 function renderPlayList() {
 	$(".songs").html("");
 	for(var i = 0; i < myPlayList.length; i++) {
+		
 		$(".songs").append("<div class='song' id='song-" + i + "'><div class='remove'>X</div></div>");
 		$("#song-" + i).append("<p> Title:" + myPlayList[i].title + "</p>");
     	$("#song-" + i).append("<p> Artist:" + myPlayList[i].artist + "</p>");
@@ -70,7 +71,12 @@ function renderPlayList() {
 
 function removeSong(event){
 	console.log('X Clicked')
-  $(event.target).parent().hide();
+    console.log($(event.target).parent().attr("id"));
+    var songId = $(event.target).parent().attr("id");
+    var index = songId.split("-")[1]
+    myPlayList.splice(index, 1);
+    renderPlayList();
+  
 }
 
 function addSong(){
