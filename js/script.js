@@ -28,21 +28,21 @@ var mySong = {
 
 var myPlayList = [
 	{
-		"title":"Across the Universe",
-		"artist":"The Beatles",
+		"title":" Across the Universe",
+		"artist":" The Beatles",
 		"mp3-url":"https://open.spotify.com/track/4dkoqJrP0L8FXftrMZongF",
 		"image-url":"https://i.scdn.co/image/b3651a85f2bca826b38194c51d09cd7b068aa3ab",
 
 	},
 	{
-		"title":"The Party's Crashing Us ",
-		"artist":"Of Montreal",
+		"title":" The Party's Crashing Us ",
+		"artist":" Of Montreal",
 		"mp3-url":"https://open.spotify.com/track/12zvitvNTaAM6HxMPGm1vh",
 		"image-url":"https://i.scdn.co/image/029db5b208be1718359eb000e9ffca87ca035157",
 	},
 	{
-		"title":"Under Cover of Darkness",
-		"artist":"The Strokes",
+		"title":" Under Cover of Darkness",
+		"artist":" The Strokes",
 		"mp3-url":"https://open.spotify.com/track/6u0x5ad9ewHvs3z6u9Oe3c",
 		"image-url":"https://i.scdn.co/image/c1b2df9385e01aedc5288dfa315329f4c1dd79e1",
 	}
@@ -59,7 +59,7 @@ function renderPlayList() {
 	$(".songs").html("");
 	for(var i = 0; i < myPlayList.length; i++) {
 		
-		$(".songs").append("<div class='song' id='song-" + i + "'><div class='remove'>X</div></div>");
+		$(".songs").append("<div class='song' id='song-" + i + "'><br><div class='remove'>&#10007;</div></div>");
 		$("#song-" + i).append("<p> Title:" + myPlayList[i].title + "</p>");
     	$("#song-" + i).append("<p> Artist:" + myPlayList[i].artist + "</p>");
 		$("#song-" + i).append("<a href ='" + myPlayList[i]["mp3-url"] + "'> Play Song </a>");
