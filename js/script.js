@@ -56,13 +56,14 @@ $(document).ready(function(){
 });
 
 function renderPlayList() {
+	
 	$(".songs").html("");
 	for(var i = 0; i < myPlayList.length; i++) {
-		
+	console.log("renderPlayList")	
 		$(".songs").append("<div class='song' id='song-" + i + "'><br><div class='remove'>&#10007;</div></div>");
 		$("#song-" + i).append("<p> Title:" + myPlayList[i].title + "</p>");
     	$("#song-" + i).append("<p> Artist:" + myPlayList[i].artist + "</p>");
-		$("#song-" + i).append("<a href ='" + myPlayList[i]["mp3-url"] + "'> Play Song </a>");
+		$("#song-" + i).append("<a href ='" + myPlayList[i]["mp3-url"] + "'> <h5 class= 'header'>Play Song</h5> </a>");
 		$("#song-" + i).append("<img src =" + myPlayList[i]["image-url"] + ">");
 	}
 

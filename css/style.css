@@ -1,8 +1,9 @@
 body {
     background-color:#b3ffb3;
 }
-/*#myPlayListHeader {*/
-/*    font-family: 'Faster One', cursive;*/
-/*}*/
-
-
+.bodyDiv {
+    margin:auto;
+}
+.header {
+    font-family: 'Faster One', cursive;
+}
